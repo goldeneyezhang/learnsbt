@@ -36,5 +36,8 @@ object App {
 
     val num2 = num1 * twoThirds;
     println(num2)
+
+    val num3 = num1 * 7
+    println(num3)
   }
 }
