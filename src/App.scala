@@ -30,5 +30,8 @@ object App {
     println(oneHalf)
     val twoThirds = new Rational(2,3)
     oneHalf add twoThirds
+
+    val ex1 = new Rational(66,42)
+    println(ex1)
   }
 }
