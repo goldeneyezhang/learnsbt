@@ -14,6 +14,9 @@ class Rational(n: Int, d: Int) {
   def add(that: Rational): Rational =
     new Rational(that.denom * numer + that.numer * denom, denom * that.denom)
 
+  def * (that: Rational): Rational =
+    new Rational(numer * that.numer,denom * that.denom)
+
   private def gcd(a: Int,b: Int): Int =
     if (b == 0) a else gcd(b, a % b)
 }
