@@ -24,5 +24,11 @@ object App {
     println(raw"No\\\\escape!")
     //f字符串插值
     println(f"${math.Pi}%.5f")
+
+    //Rational
+    val oneHalf = new Rational(1,2)
+    println(oneHalf)
+    val twoThirds = new Rational(2,3)
+    oneHalf add twoThirds
   }
 }
