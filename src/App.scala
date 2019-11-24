@@ -39,5 +39,10 @@ object App {
 
     val num3 = num1 * 7
     println(num3)
+
+    //7。5
+    var filesHere = (new java.io.File(".")).listFiles()
+    for (file <- filesHere)
+      println(file)
   }
 }
