@@ -51,7 +51,14 @@ object App {
     val b = sum(1, _: Int, 3)
     println(b(2))
 
+    //8.7 闭包
+    val someNumbers = List(-11, -10, -5, 0, 5, 10)
+    var sum1 = 0
+    someNumbers.foreach(sum1 += _)
+    println(sum1)
   }
 
   def sum(a: Int, b: Int, c: Int) = a + b + c
+
+
 }
