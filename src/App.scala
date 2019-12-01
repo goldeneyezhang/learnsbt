@@ -44,5 +44,14 @@ object App {
     var filesHere = (new java.io.File(".")).listFiles()
     for (file <- filesHere)
       println(file)
+
+    //8.6 部分应用的函数
+    val a = sum _
+    println(a(1, 2, 3))
+    val b = sum(1, _: Int, 3)
+    println(b(2))
+
   }
+
+  def sum(a: Int, b: Int, c: Int) = a + b + c
 }
