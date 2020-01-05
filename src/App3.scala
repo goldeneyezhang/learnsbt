@@ -1,5 +1,5 @@
 import ele.{ArrayElement, Element, LineElement, UniformElement}
-
+import ele.Spiral.spiral
 object App3 {
   def main(args: Array[String]): Unit = {
     val e1: Element = new ArrayElement(Array("hello", "world"))
@@ -8,5 +8,8 @@ object App3 {
     val e3: Element = new UniformElement('x', 2, 3)
     val ele1 = Element.elem(Array("hello,")) above Element.elem(Array("world!")) beside Element.elem(Array("hi,", "linda"))
     println(ele1)
+
+    val nSides = 11
+    println(spiral(nSides, 0))
   }
 }
