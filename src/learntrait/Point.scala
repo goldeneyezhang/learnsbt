@@ -20,7 +20,7 @@ trait Rectangular {
 abstract class Component extends Rectangular {
 
 }
-
+// 此处丰富瘦接口
 class Rectangle(val topLeft: Point, val bottomRight: Point) extends Rectangular {
 
 }
