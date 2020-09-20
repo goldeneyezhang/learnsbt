@@ -12,7 +12,7 @@ object TryExpr {
     println(capitals get "North Pole")
   }
 
-  def simplifyTop(expr: Expr): Expr = expr match {
+  def simplifyTop(expr: Expr1): Expr1 = expr match {
     case UnOp("-", UnOp("-", e)) => e //双重取负
     case BinOp("+", e, Number(0)) => e //加0
     case BinOp("*", e, Number(1)) => e //乘1
