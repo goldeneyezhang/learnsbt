@@ -6,6 +6,9 @@ object App4 {
     val empty = List()
     //模式匹配
     val List(a, b, c) = fruit
+    System.out.println(diag3.flatten)
+    System.out.println(isort2(List(5, 6, 3, 8, 20, 2)))
+    System.out.println(fruit zip diag3)
   }
 
   def isort(xs: List[Int]): List[Int] =
