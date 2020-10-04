@@ -10,6 +10,11 @@ object App4 {
     System.out.println(isort2(List(5, 6, 3, 8, 20, 2)))
     System.out.println(fruit zip diag3)
     System.out.println(msort((x: Int, y: Int) => x < y)(List(5, 7, 1, 3)))
+    val intSort = msort((x: Int, y: Int) => x < y) _
+    val reverseIntSort = msort((x: Int, y: Int) => x > y) _
+    val mixedInts = List(4, 1, 9, 0, 5, 8, 3, 6, 2, 7)
+    println(intSort(mixedInts))
+    println(reverseIntSort(mixedInts))
   }
 
   /**
