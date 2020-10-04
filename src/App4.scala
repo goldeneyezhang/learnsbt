@@ -25,6 +25,8 @@ object App4 {
     var sum = 0
     List(1, 2, 3, 4, 5) foreach (sum += _)
     println(sum)
+    println(words.zip(mixedInts))
+    println((List(10, 20), List(3, 4, 5)).zipped.map(_ * _))
   }
 
   /**
