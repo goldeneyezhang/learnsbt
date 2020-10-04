@@ -15,6 +15,16 @@ object App4 {
     val mixedInts = List(4, 1, 9, 0, 5, 8, 3, 6, 2, 7)
     println(intSort(mixedInts))
     println(reverseIntSort(mixedInts))
+    println(List(1, 2, 3) map (_ + 1))
+    val words = List("the", "quick", "brown", "fox")
+    println(words map (_.length))
+    println(words map (_.toList.reverse.mkString))
+    println(words flatMap (_.toList))
+    println(List.range(1, 5) flatMap (i => List.range(1, i) map (j => (i, j))))
+    for (i <- List.range(1, 5); j <- List.range(1, i)) yield (i, j)
+    var sum = 0
+    List(1, 2, 3, 4, 5) foreach (sum += _)
+    println(sum)
   }
 
   /**
