@@ -39,6 +39,7 @@ object App4 {
     for (word <- wordsArray)
       words2 += word.toLowerCase()
     println(words2)
+    println(countWords(text))
   }
 
   /**
@@ -90,5 +91,17 @@ object App4 {
       val (ys, zs) = xs splitAt n
       merge(msort(less)(ys), msort(less)(zs))
     }
+  }
+
+  def countWords(text: String) = {
+    val counts = scala.collection.mutable.Map.empty[String, Int]
+    for (rawWord <- text.split("[ ,!.]+")) {
+      val word = rawWord.toLowerCase()
+      val oldCount =
+        if (counts.contains(word)) counts(word)
+        else 0
+      counts += (word -> (oldCount + 1))
+    }
+    counts
   }
 }
