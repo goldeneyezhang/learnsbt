@@ -1,3 +1,5 @@
+
+
 object App4 {
   def main(args: Array[String]): Unit = {
     val fruit = List("apples", "oranges", "pears")
@@ -27,6 +29,16 @@ object App4 {
     println(sum)
     println(words.zip(mixedInts))
     println((List(10, 20), List(3, 4, 5)).zipped.map(_ * _))
+    val nums1 = List(1) :: List(2)
+    println(nums1)
+    println(List(1, 2, 3) ::: List(4, 5))
+    //统计不同单词的个数
+    val text = "See spot run.run,Spot.Run!"
+    val wordsArray = text.split("[ !,.]+")
+    val words2 = scala.collection.mutable.Set.empty[String]
+    for (word <- wordsArray)
+      words2 += word.toLowerCase()
+    println(words2)
   }
 
   /**
