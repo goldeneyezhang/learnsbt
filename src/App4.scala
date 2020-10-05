@@ -1,4 +1,4 @@
-
+import scala.collection.immutable.{TreeMap, TreeSet}
 
 object App4 {
   def main(args: Array[String]): Unit = {
@@ -40,6 +40,9 @@ object App4 {
       words2 += word.toLowerCase()
     println(words2)
     println(countWords(text))
+    val ts = TreeSet(9, 3, 1, 8, 0, 2, 7, 4, 6, 5)
+    val cs = TreeSet('f', 'u', 'n')
+    val tm = TreeMap(3 -> 'x', 1 -> 'x', 4 -> 'x')
   }
 
   /**
