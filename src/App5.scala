@@ -1,3 +1,4 @@
+
 object App5 {
   def main(args: Array[String]): Unit = {
     val account = new BankAccount()
@@ -7,5 +8,6 @@ object App5 {
     val t = new Thermometer
     t.celsius = 100
     println(t)
+
   }
 }
