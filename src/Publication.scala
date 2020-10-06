@@ -11,7 +11,7 @@ object Library {
       new Book("Walden")
     )
 
-  //函数的结果类型是协变的
+  //函数的结果类型是协变的,函数的入参是逆变的
   def printBookList(info: Book => AnyRef) = {
     for (book <- books) println(info(book))
   }
