@@ -9,5 +9,7 @@ object App5 {
     t.celsius = 100
     println(t)
 
+    //val x: Queue[Int] = new StrangeIntQueue
+    //x.enqueue(123)
   }
 }

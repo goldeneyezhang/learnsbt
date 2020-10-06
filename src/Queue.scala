@@ -32,9 +32,13 @@ object Queue {
 
 }
 
-class StrangeIntQueue extends Queue[Int] {
+/*class StrangeIntQueue extends Queue[Int] {
   override def enqueue(x: Int): Queue[Int] = {
     println(math.sqrt(x))
     super.enqueue(x)
   }
-}
+
+  override def head: Int = ???
+
+  override def tail: Queue[Int] = ???
+}*/
