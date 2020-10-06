@@ -31,3 +31,10 @@ object Queue {
   }
 
 }
+
+class StrangeIntQueue extends Queue[Int] {
+  override def enqueue(x: Int): Queue[Int] = {
+    println(math.sqrt(x))
+    super.enqueue(x)
+  }
+}
