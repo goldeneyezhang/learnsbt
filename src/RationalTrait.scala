@@ -40,6 +40,10 @@ trait LazyRationalTrait {
   val numerArg: Int
   val denomArg: Int
   lazy val numer = numerArg / g
+  lazy val denom = denomArg / g
+
+  override def toString: String = numer + "/" + denom
+
   private lazy val g = {
     require(denomArg != 0)
     gcd(numerArg, denomArg)
@@ -55,5 +59,5 @@ object LazyRationalTraitObject extends App {
     override val numerArg: Int = 1 * x
     override val denomArg: Int = 2 * x
   }
-  println(l.numer)
+  println(l)
 }
