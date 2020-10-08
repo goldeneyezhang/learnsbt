@@ -26,8 +26,18 @@ abstract class CurrencyZone {
     def +(that: Currency): Currency =
       make(this.amount + that.amount)
 
-    def *(x: Double): Currency =
+    def *(x: Double): Currency = {
       make((this.amount * x).toLong)
+    }
+
+    def -(that: Currency): Currency =
+      make((this.amount - that.amount))
+
+    def /(that: Double) =
+      make((this.amount / that).toLong)
+
+    def /(that: Currency) =
+      this.amount.toDouble / that.amount
   }
 
   val CurrencyUnit: Currency
@@ -103,4 +113,6 @@ object Cur extends App {
   println(res17)
   val res18 = US.Dollar from res17
   println(res18)
+
+  println(US.Dollar + US.Cent)
 }
