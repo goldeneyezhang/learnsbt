@@ -6,7 +6,7 @@ abstract class CurrencyZone {
 
   abstract class AbstractCurrency {
     val amount: Long
-    val CurrencyUnit: Currency
+
 
     def designation: String
 
@@ -30,6 +30,7 @@ abstract class CurrencyZone {
       make((this.amount * x).toLong)
   }
 
+  val CurrencyUnit: Currency
 }
 
 object US extends CurrencyZone {
@@ -49,6 +50,39 @@ object US extends CurrencyZone {
   val CurrencyUnit = Dollar
 }
 
+object Europe extends CurrencyZone {
+
+  abstract class Euro extends AbstractCurrency {
+    override def designation: String = "EUR"
+  }
+
+  type Currency = Euro
+
+  def make(cents: Long) = new Euro {
+    val amount = cents
+  }
+
+  val Cent = make(1)
+  val Euro = make(100)
+  val CurrencyUnit = Euro
+}
+
+object Japan extends CurrencyZone {
+
+  abstract class Yen extends AbstractCurrency {
+    override def designation: String = "JPY"
+  }
+
+  type Currency = Yen
+
+  def make(yen: Long) = new Yen {
+    val amount = yen
+  }
+
+  val Yen = make(1)
+  val CurrencyUnit = Yen
+}
+
 object Converter {
   var exchangeRate = Map(
     "USD" -> Map("USD" -> 1.0, "EUR" -> 0.7596,
@@ -60,4 +94,13 @@ object Converter {
     "CHF" -> Map("USD" -> 0.8108, "EUR" -> 0.6160,
       "JPY" -> 0.982, "CHF" -> 1.0)
   )
+}
+
+object Cur extends App {
+  val res16 = Japan.Yen from US.Dollar * 100
+  println(res16)
+  val res17 = Europe.Euro from res16
+  println(res17)
+  val res18 = US.Dollar from res17
+  println(res18)
 }
