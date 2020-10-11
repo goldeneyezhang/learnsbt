@@ -1,3 +1,5 @@
+
+
 object Imp extends App {
   implicit def doubleToInt(x: Double) = x.toInt
 
