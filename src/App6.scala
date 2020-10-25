@@ -1,4 +1,4 @@
-
+import collection.immutable.BitSet
 
 object App6 extends App {
   for(x <- List(1,2);y <- List("one","two"))
@@ -19,4 +19,8 @@ object App6 extends App {
   val vec2 = vec :+ 1 :+2
   val vec3 = 100 +: vec2
   println(vec3)
+
+  val bits = BitSet(1,2,3)
+  println(bits map(_*2))
+  println(bits map(_.toFloat))
 }
