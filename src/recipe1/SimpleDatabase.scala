@@ -1,6 +1,6 @@
 package recipe1
 
-object SimpleDatabase extends Database {
+object SimpleDatabase extends Database with SimpleFoods with SimpleRecipes {
   def allFoods = List(Apple, Orange, Cream, Sugar)
 
   //def foodNamed(name: String): Option[Food] =
