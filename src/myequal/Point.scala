@@ -7,9 +7,11 @@ class Point(val x: Int, val y: Int) {
 
   //自生类型
   override def equals(other: Any): Boolean = other match {
-    case that: Point => this.x == that.x && this.y == that.y
+    case that: Point => (that canEqual (this)) && (this.x == that.x) && (this.y == that.y)
     case _ => false
   }
+
+  def canEqual(other: Any) = other.isInstanceOf[Point]
 }
 
 object Point extends App {
@@ -20,4 +22,7 @@ object Point extends App {
 
   val coll = mutable.HashSet(p1)
   println(coll contains (p2))
+
+  val p4 = new ColoredPoint(1, 2, Color.Blue);
+  println(p1 equals (p4))
 }
