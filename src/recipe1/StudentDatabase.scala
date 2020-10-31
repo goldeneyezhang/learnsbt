@@ -12,7 +12,7 @@ object StudentDatabase extends Database {
 
   override def allFoods: List[Food] = List(FrozenFood)
 
-  override def allReceipes: List[Recipe] = List(HeatItUp)
+  override def allRecipes: List[Recipe] = List(HeatItUp)
 
   override def allCategories: List[StudentDatabase.FoodCategory] = List(FoodCategory("edible", List(FrozenFood)))
 }
